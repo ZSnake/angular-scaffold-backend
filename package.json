@@ -1,0 +1,29 @@
+{
+  "name": "angular-scaffold",
+  "version": "1.0.0",
+  "description": "Angular scaffold with hapi.js serving it",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ZSnake/angular-scaffold.git"
+  },
+  "keywords": [
+    "angular",
+    "hapi",
+    "node",
+    "bootstrap",
+    "scaffold"
+  ],
+  "author": "Viktor Zavala",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZSnake/angular-scaffold/issues"
+  },
+  "homepage": "https://github.com/ZSnake/angular-scaffold#readme",
+  "dependencies": {
+    "hapi": "^11.1.0"
+  }
+}
