@@ -11,12 +11,17 @@ server.connection({
 server.register(inert, function(err){
 
 	server.route({
-    handler:{
-      directory: {
-        path: ['../client/app', '../client/bower_components']
+    method: 'GET',
+    path: '/{param*}',
+    config: {
+      handler:{
+        directory: {
+          path: ['../client/app', '../client/bower_components']
+        }
       }
     }
   });
+
 
 
 	server.start(function () {
