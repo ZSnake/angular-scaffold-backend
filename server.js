@@ -3,8 +3,8 @@ var inert = require('inert');
 
 var server = new hapi.Server();
 server.connection({
-    host: 'localhost',
-    port: 8000,
+    host: '0.0.0.0',
+    port: +process.env.PORT | 8000,
 });
 
 
