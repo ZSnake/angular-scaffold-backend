@@ -4,7 +4,7 @@
   "description": "Angular scaffold with hapi.js serving it",
   "main": "server.js",
   "scripts": {
-    "test": "test"
+    "start": "node server/server.js"
   },
   "repository": {
     "type": "git",
