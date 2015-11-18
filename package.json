@@ -25,6 +25,8 @@
   "homepage": "https://github.com/ZSnake/angular-scaffold#readme",
   "dependencies": {
     "hapi": "^11.1.0",
-    "inert": "^3.2.0"
+    "hapi-mongodb": "^4.1.0",
+    "inert": "^3.2.0",
+    "mongoose": "^4.2.6"
   }
 }
