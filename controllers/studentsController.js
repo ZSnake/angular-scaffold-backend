@@ -1,6 +1,11 @@
 var student = require('../schemas/student');
 
 exports.getStudents = {
+  auth: {
+    mode:'required',
+    strategy:'session',
+    scope: ['admin']
+  },
   handler: function(request, reply){
     var students = student.find({});
     reply(students);
@@ -8,6 +13,11 @@ exports.getStudents = {
 }
 
 exports.createStudent = {
+  auth: {
+    mode:'required',
+    strategy:'session',
+    scope: ['admin']
+  },
   handler: function(request, reply){
     var newStudent = new student({
       name: request.payload.name,

@@ -13,18 +13,17 @@ exports.login = {
     },
     handler: function(request, reply) {
         var password = String(SHA3(request.payload.password));
-        console.log(password);
         user.find({username: request.payload.username, password: password}, function(err, user){
             if(err)
               return reply(boom.unauthorized('Bad email or password'));
-            request.auth.session.set(user);
-            return reply('Ok')
+            request.auth.session.set(user[0]);
+            return reply({username: user[0].username, scope: user[0].scope});
         });
   }
 };
 exports.logout = {
     auth: {
-      mode:'try',
+      mode:'required',
       strategy:'session'
     },
     handler: function(request, reply) {
