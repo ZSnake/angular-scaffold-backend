@@ -14,10 +14,16 @@ exports.login = {
     handler: function(request, reply) {
         var password = String(SHA3(request.payload.password));
         user.find({username: request.payload.username, password: password}, function(err, user){
-            if(err)
-              return reply(boom.unauthorized('Bad email or password'));
-            request.auth.session.set(user[0]);
-            return reply({username: user[0].username, scope: user[0].scope});
+            console.log(user);
+            console.log(err)
+            if(!err){
+              if(user.length > 0){
+                request.auth.session.set(user[0]);
+                return reply({username: user[0].username, scope: user[0].scope});
+              }
+              return reply(boom.unauthorized('Wrong email or password'));
+            }
+            return reply(boom.notAcceptable('Error Executing Query'));
         });
   }
 };
