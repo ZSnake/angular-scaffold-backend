@@ -4,7 +4,7 @@ exports.getStudents = {
   auth: {
     mode:'required',
     strategy:'session',
-    scope: ['admin']
+    scope: ['admin', 'regular']
   },
   handler: function(request, reply){
     var students = student.find({});
