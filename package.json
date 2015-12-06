@@ -2,9 +2,9 @@
   "name": "angular-scaffold",
   "version": "1.0.0",
   "description": "Angular scaffold with hapi.js serving it",
-  "main": "server/server.js",
+  "main": "server",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server"
   },
   "repository": {
     "type": "git",
