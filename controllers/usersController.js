@@ -1,6 +1,6 @@
 var user = require('../schemas/user');
 var SHA3 = require("crypto-js/sha3");
-var boom = require('Boom');
+var boom = require('boom');
 
 exports.createUser = {
     auth: {
