@@ -13,8 +13,7 @@ server.connection({
                 } }
 });
 
-mongoose.connect(process.env.MONGOLAB_URI ||
-    process.env.MONGOHQ_URL || 'mongodb://localhost/angularscaffold');
+mongoose.connect('mongodb://zsnake:password@ds049104.mongolab.com:49104/angular-scaffold');
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));
