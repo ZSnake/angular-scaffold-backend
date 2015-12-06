@@ -10,7 +10,8 @@ server.connection({
     routes: { cors: {
                     credentials: true,
                     origin: ["*"]
-                } }
+                }
+              }
 });
 
 mongoose.connect('mongodb://zsnake:password@ds049104.mongolab.com:49104/angular-scaffold');
