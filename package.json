@@ -22,6 +22,9 @@
   "bugs": {
     "url": "https://github.com/ZSnake/angular-scaffold/issues"
   },
+  "engines": {
+    "node": "^4.2.1"
+  },
   "homepage": "https://github.com/ZSnake/angular-scaffold#readme",
   "dependencies": {
     "boom": "^3.0.0",
