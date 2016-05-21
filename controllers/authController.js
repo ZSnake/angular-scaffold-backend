@@ -14,11 +14,10 @@ exports.login = {
     handler: function(request, reply) {
       var password = String(SHA3(request.payload.password));
       user.find({username: request.payload.username, password: password}, function(err, user){
-          console.log(user);
-          console.log(err)
+          
           if(!err){
             if(user.length > 0){
-              request.auth.session.set(user[0]);
+              request.cookieAuth.set(user[0]);
               return reply({username: user[0].username, scope: user[0].scope});
             }
             return reply(boom.unauthorized('Wrong email or password'));
@@ -33,7 +32,7 @@ exports.logout = {
       strategy:'session'
     },
     handler: function(request, reply) {
-      request.auth.session.clear();
+      request.cookieAuth.clear();
       return reply('Logout Successful!');
     }
   };
