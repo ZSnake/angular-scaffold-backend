@@ -1,11 +1,11 @@
 var student = require('../schemas/student');
 
 exports.getStudents = {
-  auth: {
-    mode:'required',
-    strategy:'session',
-    scope: ['admin', 'regular']
-  },
+  // auth: {
+  //   mode:'required',
+  //   strategy:'session',
+  //   scope: ['admin', 'regular']
+  // },
   handler: function(request, reply){
     var students = student.find({});
     reply(students);
@@ -13,12 +13,13 @@ exports.getStudents = {
 }
 
 exports.createStudent = {
-  auth: {
-    mode:'required',
-    strategy:'session',
-    scope: ['admin']
-  },
+  // auth: {
+  //   mode:'required',
+  //   strategy:'session',
+  //   scope: ['admin']
+  // },
   handler: function(request, reply){
+    console.log(request.payload);
     var newStudent = new student({
       name: request.payload.name,
       account: request.payload.account

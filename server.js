@@ -6,12 +6,8 @@ var auth = require('hapi-auth-cookie');
 
 var server = new hapi.Server();
 server.connection({
-    port: ~~process.env.PORT || 8000,
-    routes: { cors: {
-                    credentials: true,
-                    origin: ["*"]
-                }
-              }
+    port: process.env.PORT || 8000,
+    routes: {cors: true}
 });
 
 mongoose.connect('mongodb://zsnake:password@ds025772.mlab.com:25772/angular-scaffold');
@@ -32,7 +28,6 @@ server.register([inert, auth], function(err){
   });
 
 	server.route(routes.endpoints);
-
 	server.start(function () {
 	    console.log('Server running at:', server.info.uri);
 	});
