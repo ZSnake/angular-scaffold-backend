@@ -13,11 +13,11 @@ exports.getStudents = {
 }
 
 exports.createStudent = {
-  // auth: {
-  //   mode:'required',
-  //   strategy:'session',
-  //   scope: ['admin']
-  // },
+  auth: {
+    mode:'required',
+    strategy:'session',
+    scope: ['admin']
+  },
   handler: function(request, reply){
     console.log(request.payload);
     var newStudent = new student({
